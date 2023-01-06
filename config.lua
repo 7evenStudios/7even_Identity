@@ -15,4 +15,5 @@ Config = {
 
     return res;
   end,
+  DateFormat = "{day}.{month}.{year}"
 }

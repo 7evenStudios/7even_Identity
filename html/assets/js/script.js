@@ -64,7 +64,6 @@ $(document).ready(function () {
   $('#sizeLabel').append(` (${config.minSize} - ${config.maxSize})`);
   $('#size').attr('placeholder', `${config.minSize}`)
 
-
   $('#firstname').keyup(nameKeyup);
   $('#lastname').keyup(nameKeyup);
 
@@ -106,10 +105,16 @@ $(document).ready(function () {
       await wait(500);
       $('#form').removeClass('animate__pulse');
 
+      const birthDate = new Date(birthdate);
+
       emitClient('createCharacter', {
         firstname,
         lastname,
-        dateofbirth: birthdate.replaceAll('-', '/'),
+        birthdate: {
+          day: birthDate.getDate(),
+          month: birthDate.getMonth(),
+          year: birthDate.getFullYear()
+        },
         gender,
         size
       });
@@ -125,9 +130,13 @@ $(document).ready(function () {
     }
   });
 
-  window.addEventListener('message', function (event) {
-    if (event.data.type === 'open') {
-      $('body').fadeIn(500);
-    }
-  });
+  setTimeout(() => {
+    emitClient('nuiReady', {});
+  }, 2000);
+});
+
+window.addEventListener('message', function (event) {
+  if (event.data.type === 'open') {
+    $('body').fadeIn(500);
+  }
 });

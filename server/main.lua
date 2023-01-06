@@ -1,28 +1,34 @@
 local players = {}
 
 function setPlayerIdentity(xPlayer)
+  local playerData = players[xPlayer.source];
+
   if xPlayer.set and xPlayer.setName then
-    xPlayer.setName(players[xPlayer.source].name);
-    for key, value in pairs(players[xPlayer.source]) do
+    xPlayer.setName(playerData.name);
+    for key, value in pairs(playerData) do
       xPlayer.set(key, value);
     end
   end
   
-  TriggerClientEvent('7even_identity:setPlayerData', xPlayer.source, players[xPlayer.source]);
+  TriggerClientEvent('7even_identity:setPlayerData', xPlayer.source, playerData);
 
   Config.Query('UPDATE users SET firstname = ?, lastname = ?, dateofbirth = ?, sex = ?, height = ? WHERE identifier = ?', {
-    players[xPlayer.source].firstName,
-    identity[xPlayer.source].lastName,
-    identity[xPlayer.source].dateOfBirth,
-    identity[xPlayer.source].sex,
-    identity[xPlayer.source].height,
+    playerData.firstName,
+    playerData.lastName,
+    playerData.dateOfBirth,
+    playerData.sex,
+    playerData.height,
     xPlayer.identifier
   });
 end
 
-RegisterNetEvent('esx:playerLoaded', function()
-  local source = source;
-  local xPlayer = ESX.GetPlayerFromId(source);
+RegisterNetEvent('esx:playerLoaded', function(playerId)
+  local xPlayer;
+
+  while not xPlayer do
+    Citizen.Wait(250);
+    xPlayer = ESX.GetPlayerFromId(playerId);
+  end
 
   Config.Query("SELECT * FROM users WHERE identifier = @identifier", {
     ["@identifier"] = xPlayer.identifier
@@ -32,10 +38,10 @@ RegisterNetEvent('esx:playerLoaded', function()
     end
 
     if not result[1].firstname then
-      TriggerClientEvent('7even_identity:nui:send', source, { type = "open" });
-      TriggerClientEvent('7even_identity:nui:focus', source);
+      TriggerClientEvent('7even_identity:nui:send', playerId, { type = "open" });
+      TriggerClientEvent('7even_identity:nui:focus', playerId);
     else
-      players[source] = {
+      players[playerId] = {
         name = ('%s %s'):format(result[1].firstname, result[1].lastname),
         firstName = result[1].firstname,
         lastName = result[1].lastname,
@@ -57,7 +63,7 @@ RegisterNetEvent('7even_identity:createCharacter', function(data)
     name = ('%s %s'):format(data.firstname, data.lastname),
     firstName = data.firstname,
     lastName = data.lastname,
-    dateOfBirth = data.dateofbirth,
+    dateOfBirth = Config.DateFormat:gsub('{day}', data.birthdate.day):gsub('{month}', data.birthdate.month):gsub('{year}', data.birthdate.year),
     sex = data.gender,
     height = data.size
   }
