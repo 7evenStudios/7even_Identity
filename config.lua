@@ -1,4 +1,4 @@
-local ESX = exports["es_extended"]:getSharedObject();
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 Config = {
   Query = function(query, params, cb)
@@ -8,5 +8,11 @@ Config = {
       res = result;
       resReceived = true;
     end);
+
+    while not resReceived do
+      Citizen.Wait(0);
+    end
+
+    return res;
   end,
 }
