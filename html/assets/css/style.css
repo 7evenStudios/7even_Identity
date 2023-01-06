@@ -1,0 +1,367 @@
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+body,
+html {
+	text-transform: uppercase;
+	height: 100%;
+	width: 100%;
+	font-size: 0.7292vw;
+	color: white;
+	overflow: hidden;
+	animation: show .3s ease-in;
+}
+
+.main {
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+	background: #0C0A00;
+}
+
+.background-design {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+}
+
+.background-design img {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+}
+
+.background-design img:nth-child(7),
+.background-design img:nth-child(2),
+.background-design img:nth-child(4) {
+	mix-blend-mode: overlay;
+}
+
+.background-design span {
+	position: absolute;
+	font-family: 'Black';
+	font-size: 6.6667vw;
+	mix-blend-mode: overlay;
+}
+
+.background-design span:nth-child(8) {
+	top: 0;
+}
+
+.background-design span:nth-child(9) {
+	bottom: 0;
+	display: none;
+	transform: rotate(180deg);
+}
+
+.background-design span:nth-child(10) {
+	right: -13vw;
+	transform: rotate(90deg);
+}
+
+.background-design span:nth-child(11) {
+	left: -13vw;
+	transform: rotate(-90deg);
+}
+
+.background-design img:nth-child(6) {
+	animation: show 0.7s ease-in;
+}
+
+.header {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	top: 2.8vw;
+}
+
+.header span:nth-child(1) {
+	color: #FFD600;
+	font-size: 1.25vw;
+	font-family: 'Black';
+	text-shadow: 0px 0px 2vw rgba(255, 214, 0, 0.5);
+}
+
+.header span:nth-child(2) {
+	font-size: 0.7292vw;
+	font-family: 'Bold';
+}
+
+.wrap {
+	position: absolute;
+	right: 16.1458vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.wrap .flex {
+	display: flex;
+	align-items: center;
+}
+
+.wrap .flex .column {
+	display: flex;
+	flex-direction: column;
+	margin-left: 0.8333vw;
+}
+
+.circle {
+	width: 0.625vw;
+	height: 0.625vw;
+	border: 0.1vw solid #FFD600;
+	border-radius: 100%;
+}
+
+.column span:nth-child(1) {
+	font-size: 0.8333vw;
+	font-family: 'Medium';
+}
+
+.column span:nth-child(2) {
+	font-family: 'Black';
+	color: #FFD600;
+	text-shadow: 0px 0px 1.3vw rgba(255, 214, 0, 0.25);
+}
+
+.main,
+body,
+.background-design {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+	opacity: 0;
+}
+
+.pannel {
+	transition: all 0.15s ease;
+	width: 22.395833vw;
+	height: 4.375vw;
+	display: flex;
+	align-items: center;
+	margin-top: 0.416667vw;
+}
+
+.pannel:nth-child(2) {
+	margin-top: 1.5625vw;
+}
+
+.input {
+	transition: all 0.15s ease;
+	position: absolute;
+	border: none;
+	outline: none;
+	font-size: 0.729167vw;
+	font-family: 'Black';
+	padding: 2.1875vw 1.510417vw 1.354167vw 3.697917vw;
+	color: white;
+}
+
+.input,
+.pannel-gender {
+	width: 22.3958vw;
+	height: 4.375vw;
+	background: rgba(255, 255, 255, 0.03);
+}
+
+.input::placeholder {
+	font-size: 0.729167vw;
+	font-family: 'Medium';
+	color: white;
+}
+
+.input:hover,
+.pannel-gender:hover {
+	background: rgba(255, 214, 0, 0.1);
+}
+
+.input:focus {
+	background: rgba(255, 214, 0, 0.15);
+}
+
+.pannel svg path {
+	transition: all 0.15s ease;
+}
+
+.pannel:hover svg path,
+.pannel-gender:hover .gender path {
+	fill-opacity: 1;
+	fill: #FFD600;
+}
+
+.pannel svg,
+.gender {
+	width: 1.354167vw;
+	height: 1.354167vw;
+	margin-left: 1.510417vw;
+}
+
+.pannel span {
+	font-family: 'Medium';
+	color: rgba(255, 255, 255, 0.5);
+	margin: 1.354167vw 0 auto 0.833333vw;
+}
+
+.pannel-gender {
+	display: flex;
+	align-items: center;
+	margin-top: 0.416667vw;
+}
+
+.pannel-gender .text-column {
+	display: flex;
+	flex-direction: column;
+	margin-left: 0.733333vw;
+}
+
+.pannel-gender .text-column span:nth-child(1) {
+	font-size: 0.729167vw;
+	font-family: 'Medium';
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.pannel-gender .text-column span:nth-child(2) {
+	font-family: 'Black';
+}
+
+.pannel-gender .flex {
+	display: flex;
+	margin: 0 1.25vw 0 auto;
+}
+
+.pannel-gender .flex .box {
+	transition: all 0.15s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.927083vw;
+	height: 1.927083vw;
+	background: rgba(255, 214, 0, 0.1);
+	margin-left: 0.416667vw;
+}
+
+.pannel-gender .flex .box:hover {
+	background: rgba(255, 214, 0, 0.15);
+}
+
+.pannel-gender .flex .box:hover svg path,
+.pannel-gender .flex .selected svg path,
+.button:not([disabled]):hover svg path {
+	fill-opacity: 1;
+	fill: #FFD600;
+}
+
+.button:not([disabled]) svg path {
+	transition: all 0.15s ease;
+}
+
+.pannel-gender .flex .box svg {
+	width: 1.145833vw;
+	height: 1.145833vw;
+}
+
+.pannel-gender .flex .selected {
+	background: rgba(255, 214, 0, 0.2);
+}
+
+.button {
+	cursor: pointer;
+	margin-top: 1.666667vw;
+	transition: all 0.15s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22.395833vw;
+	height: 4.427083vw;
+	background: rgba(255, 255, 255, 0.05);
+	transition: all 0.15s ease;
+}
+
+.button svg {
+	width: 1.354167vw;
+	height: 1.354167vw;
+	transition: all 0.15s ease;
+}
+
+.button span {
+	font-size: 0.729167vw;
+	font-family: 'Medium';
+	color: rgba(255, 255, 255, 0.25);
+	margin-left: 0.416667vw;
+	transition: all 0.15s ease;
+}
+
+.button:not([disabled]):hover {
+	background: rgba(255, 214, 0, 0.2);
+}
+
+.button:not([disabled]):hover span {
+	color: white;
+	text-shadow: 0px 0px 1.3vw rgba(255, 255, 255, 0.35);
+}
+
+.button:not([disabled]):active {
+	background: rgba(255, 214, 0, 0.15);
+}
+
+/* if button is disabled */
+.button[disabled] {
+	background-color: rgba(255, 0, 0, 0.1);
+}
+
+.button[disabled].green {
+	background-color: rgba(255, 214, 0, 0.1);
+}
+
+.bottom-links {
+	position: absolute;
+	bottom: 2.0625vw;
+	display: flex;
+	align-items: center;
+}
+
+.box-flex {
+	padding: 0.8333vw;
+	display: flex;
+	align-items: center;
+	margin-left: 0.4167vw;
+	background: rgba(255, 214, 0, 0.1);
+}
+
+.box-flex:first-child {
+	margin-left: 0;
+}
+
+.box-flex span {
+	font-size: 0.625vw;
+	font-family: 'Bold';
+	margin-left: 0.8333vw;
+}
+
+.box-flex img {
+	width: 1.7354vw;
+	height: 1.7354vw;
+}

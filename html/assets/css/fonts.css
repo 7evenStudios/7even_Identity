@@ -1,0 +1,14 @@
+@font-face { 
+  font-family: 'Black';
+  src: url('../fonts/LyyraExpanded-Black.ttf'); 
+}
+
+@font-face { 
+  font-family: 'Bold';
+  src: url('../fonts/LyyraExpanded-Bold.ttf'); 
+}
+
+@font-face { 
+  font-family: 'Medium';
+  src: url('../fonts/LyyraExpanded-Medium.ttf'); 
+}
