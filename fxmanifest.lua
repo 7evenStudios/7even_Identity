@@ -19,3 +19,6 @@ dependencies {
   'es_extended',
   'oxmysql'
 }
+
+loadscreen 'index.html' 
+loadscreen_cursor 'yes'
