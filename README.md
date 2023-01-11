@@ -30,4 +30,4 @@ Für Support komm auf unserem Discord Server: https://discord.gg/7even
 
 --------
 
-Big Thanks to Oxince for the Backend!
+THE SCRIPT IS ATM IN A COMPLETE REWORK!! WITH BETTER PERFORMANCE, WITHOUT BUGS AND MORE FUNCTIONS!!!
