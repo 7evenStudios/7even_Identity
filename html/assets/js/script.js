@@ -101,13 +101,6 @@ $(document).ready(function () {
 
       await wait(500);
       $('body').fadeOut(500);
-      const setCursorPosition = (input, pos) => {
-      input.focus();
-      input.setSelectionRange(pos, pos);
-      }
-
-      // Reset the cursor position after closing the UI
-      setCursorPosition(document.getElementById(‘inputFieldId’), 0);
 
       await wait(500);
       $('#form').removeClass('animate__pulse');
