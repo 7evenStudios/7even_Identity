@@ -29,5 +29,3 @@ Für Support komm auf unserem Discord Server: https://discord.gg/7even
 3. Wichtig! BENENNE NICHT DAS SCRIPT UM! Sonst funktioniert es nicht mehr.
 
 --------
-
-THE SCRIPT IS ATM IN A COMPLETE REWORK!! WITH BETTER PERFORMANCE, WITHOUT BUGS AND MORE FUNCTIONS!!!
